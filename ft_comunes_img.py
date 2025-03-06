@@ -8,7 +8,7 @@ def extract_first_image_from_pdf(pdf_path):
     doc = fitz.open(pdf_path)
     if not doc:
         return None
-    # for img in doc.get_page_images(0):
+
     img = doc.get_page_images(0)[0]
     xref = img[0]
     base_image = doc.extract_image(xref)
@@ -57,8 +57,9 @@ def adjust_window_size(windowName, image):
     
     cv2.resizeWindow(windowName, new_width, new_height)
 
-def mostrar_imagen(window_name, image):
+def mostrar_imagen(window_name, image, msec=0):
     ''' Mostrar la imagen en una ventana '''
     cv2.imshow(window_name, image)
-    cv2.waitKey(0)
+    cv2.waitKey(msec)
     cv2.destroyAllWindows()
+

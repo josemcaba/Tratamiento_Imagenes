@@ -1,27 +1,14 @@
+import ft_comunes_img as fci
 import cv2
-import json
 import numpy as np
 import fitz  # PyMuPDF
 import pytesseract  # OCR
 from PIL import Image  # Para convertir imágenes a formato compatible con pytesseract
-import sys
+
 
 # Configura la ruta de Tesseract-OCR (ajusta según tu instalación)
 # Si Tesseract está en el PATH, no es necesario configurar esto.
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
-# Función para cargar las coordenadas desde un archivo JSON
-def load_rectangles_from_json(json_path, nif):
-    with open(json_path, "r") as f:
-        coordenadas = json.load(f)
-    rectangles = coordenadas[nif]
-    return rectangles
-
-def mostrar_imagen(window_name, image):
-    ''' Mostrar la imagen en una ventana '''
-    cv2.imshow(window_name, image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
 
 def correct_text_orientation(image):
     ''' Obtener la orientación del texto usando Tesseract 
@@ -108,18 +95,19 @@ def extract_text_from_image(image):
     # Aplicar OCR con configuración personalizada
     custom_config = r'--psm 6 -l spa'  # Modo 11 para texto disperso, idioma español
     text = pytesseract.image_to_string(pil_image, config=custom_config)
-    print(text)
-    mostrar_imagen("IMAGEN", processed_image)
+
     return text
 
 # Función principal
 def extract_text_from_pdf_regions(pdf_path, json_path, output_txt_path):
     nif = input("Introduzca NIF del emisor de la factura: ")
     # Cargar las coordenadas desde el archivo JSON
-    rectangles = load_rectangles_from_json(json_path, nif)
+    rectangles = fci.load_rectangles_from_json(json_path, nif)
 
     # Abrir el PDF
     doc = fitz.open(pdf_path)
+    if not doc:
+        return None
     total_pages = len(doc)
 
     # Variable para almacenar todo el texto extraído
@@ -129,33 +117,32 @@ def extract_text_from_pdf_regions(pdf_path, json_path, output_txt_path):
     for page_num in range(total_pages):
         print(f"Procesando página {page_num + 1} de {total_pages}")
 
-        # Cargar la página actual
-        page = doc.load_page(page_num)
-        images = page.get_images(full=True)
+        img = doc.get_page_images(page_num)[0]
+        xref = img[0]
+        base_image = doc.extract_image(xref)
+        image_bytes = base_image["image"]
+        image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
 
-        # Procesar cada imagen de la página
-        for img_num, img in enumerate(images):
-            xref = img[0]
-            base_image = doc.extract_image(xref)
-            image_bytes = base_image["image"]
-            image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), cv2.IMREAD_COLOR)
+        # Verificar la orientación de la imagen y rotarla si es necesario
+        if image.shape[0] < image.shape[1]:  # Si la altura es menor que el ancho, rotar 90 grados
+            image = cv2.rotate(image, cv2.ROTATE_90_COUNTERCLOCKWISE)
 
-            # Verificar la orientación de la imagen y rotarla si es necesario
-            if image.shape[0] < image.shape[1]:  # Si la altura es menor que el ancho, rotar 90 grados
-                image = cv2.rotate(image, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # Recortar y mostrar cada trozo de imagen según las coordenadas del JSON
+        for key, coords in rectangles.items():
+            x1, y1 = coords["x1"], coords["y1"]
+            x2, y2 = coords["x2"], coords["y2"]
+            cropped_image = image[y1:y2, x1:x2]  # Recortar la región de la imagen
 
-            # Recortar y aplicar OCR a cada trozo de imagen según las coordenadas del JSON
-            for key, coords in rectangles.items():
-                x1, y1 = coords["x1"], coords["y1"]
-                x2, y2 = coords["x2"], coords["y2"]
-                cropped_image = image[y1:y2, x1:x2]  # Recortar la región de la imagen
+            # Aplicar OCR a la imagen recortada
+            text = extract_text_from_image(cropped_image)
+            full_text += f"--- Página {page_num + 1}, {key} ---\n{text}\n"
 
-                # Aplicar OCR al trozo de imagen
-                text = extract_text_from_image(cropped_image)
-                full_text += f"--- Página {page_num + 1}, Imagen {img_num + 1}, {key} ---\n{text}\n\n"
-
-            # Liberar la memoria de la imagen procesada
-            del image
+            # Mostrar la imagen recortada en una ventana
+            # print(text)
+            # window_name = f"Pagina {page_num + 1}, {key}"
+            # cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+            # fci.adjust_window_size(window_name, cropped_image)
+            # fci.mostrar_imagen(window_name, cropped_image, 1)
 
     # Guardar el texto extraído en un archivo de texto
     with open(output_txt_path, "w", encoding="utf-8") as f:
