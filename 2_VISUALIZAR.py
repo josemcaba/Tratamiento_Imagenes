@@ -4,13 +4,6 @@ import numpy as np
 import fitz  # PyMuPDF
 import ft_comunes_img as fci
 
-# # Función para cargar las coordenadas desde un archivo JSON
-# def load_rectangles_from_json(json_path, nif):
-#     with open(json_path, "r") as f:
-#         coordenadas = json.load(f)
-#     rectangles = coordenadas[nif]
-#     return rectangles
-
 # Función para mostrar los trozos de imagen según las coordenadas del JSON
 def show_cropped_images(pdf_path, json_path):
     nif = input("Introduzca NIF del emisor de la factura: ")
@@ -19,6 +12,8 @@ def show_cropped_images(pdf_path, json_path):
 
     # Abrir el PDF
     doc = fitz.open(pdf_path)
+    if not doc:
+        return None
     total_pages = len(doc)
 
     # Recorrer todas las páginas del PDF
@@ -48,15 +43,9 @@ def show_cropped_images(pdf_path, json_path):
 
                 # Mostrar la imagen recortada en una ventana
                 window_name = f"Pagina {page_num + 1}, {key}"
-                resized_image = fci.adjust_image_size(cropped_image)
-                    # Mostrar la imagen en una ventana
-                #cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-                cv2.imshow(window_name, resized_image)
-                cv2.waitKey(0)
-                cv2.destroyAllWindows()
-
-            # Liberar la memoria de la imagen procesada
-            del image
+                cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+                fci.adjust_window_size(window_name, cropped_image)
+                fci.mostrar_imagen(window_name, cropped_image)
 
 # Función principal
 if __name__ == "__main__":

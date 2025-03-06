@@ -49,8 +49,8 @@ def adjust_window_size(windowName, image):
     # Factor de escala para imagen ajustada a la pantalla
     scale_width = screen_width / img_width
     scale_height = screen_height / img_height
-    scale = 0.85 * min(scale_width, scale_height)
-    scale = 1 if scale > 1 else scale
+    scale = 0.9 * min(scale_width, scale_height)
+    scale = 1.0 if scale > 1.0 else scale
 
     new_width = int(img_width * scale)
     new_height = int(img_height * scale)
