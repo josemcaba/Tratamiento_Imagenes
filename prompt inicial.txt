@@ -1,0 +1,14 @@
+PROMPT inicial
+Programa escrito en python para extraer la información fiscal y contable de facturas. Las facturas se 
+encuentran en un archivo PDF en formato de imágenes. No en texto que pueda ser seleccionado.
+
+El resultado de leer todas las facturas debe ser un archivo excel en el que cada linea contendrá los 
+datos extraidos de cada factura. 
+
+Los datos a extraer que correponden a las columnas de la tabla excel serán las siguientes: 
+Fecha factura,  Base, % I.V.A., Cuota I.V.A., Total Factura
+
+El programa funcionará e interactuará a través de la línea de comandos. Solicitará al usuario el
+nombre del archivo PDF que contiene las facturas a procesar. 
+
+Adjunto un archivo con ejemplo de un tipo de factura a procesar.

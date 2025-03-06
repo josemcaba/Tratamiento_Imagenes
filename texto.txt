@@ -1,0 +1,100 @@
+--- Página 1, Imagen 1, rectangulo_1 ---
+FACTURA 132270 DAT
+FECHA 21.06.2021 CLI|
+PROVEEDOR GON
+SU PEDIDO CICA
+NoPEDIDO — 983879
+3 |VEHÍCULO — 8024-FZT 2906
+4 [RES.SEMANALVIO.7DIAS — — |28.0€
+
+
+--- Página 1, Imagen 1, rectangulo_2 ---
+BASEIMP. | %IVA | CUOTA |%RE.| RE — |TOTAL
+o de
+o de 29,17 10,00 2,92 1,40 0,41 % DESI
+RD BASE Il
+TOTAL
+culos
+TOTAL
+MUY IMPORTANTE: ninguna persona puede efectuar cobros sin la autorización correspondiente. Mediante factura de entrega reconozco
+haber recibido la siguiente mercancía perecedera y comprobado su estado. NO ADMITIMOS RECLAMACIONES.
+FIRMA: TOTAL.
+
+
+--- Página 1, Imagen 1, rectangulo_3 ---
+TOTAL LINEAS 2917
+% DESCUENTO 0,00%
+BASE IMPONIB. 29,17
+TOTAL IVA 2,92
+TOTAL R.E. 0,41
+TOTAL FACTURA (EUR) 32,50
+
+
+--- Página 2, Imagen 1, rectangulo_1 ---
+FACTURA 135316 DAT(
+FECHA 24.06.2021 CLII
+PROVEEDOR GON
+SU PEDIDO CICr
+N* PEDIDO — 991419
+— |veHÍCULO — E-8473-BZH 2900
++ [FORMADE PAGO FECI
+1 [RES. SEMANALVTO. 7 DÍAS 08.07
+9 | cón | SUCÓD A
+
+
+--- Página 2, Imagen 1, rectangulo_2 ---
+- BASE IMP. | %IVA | CUOTA | %RE. ] RE — |TOTAL
+
+10 de 25,38 10,00 2,54 1,40 0,36 % DES
+(RD. BASE |
+' TOTAL
+a. TOTAL
+MAELTE Telhra T EECHA ÍCIIENTET FACTURA
+
+
+--- Página 2, Imagen 1, rectangulo_3 ---
+TOTAL LINEAS 25,38
+% DESCUENTO 0,00%
+BASE IMPONIB. 25,38
+TOTAL IVA 2,54
+TOTAL R.E. 0,36
+TOTAL FACTURA (EUR) 28,28
+—————;————K—K—KKK—z—Ñ———;—_—] NNO ENN A PAN ANR
+
+
+--- Página 3, Imagen 1, rectangulo_1 ---
+— 8 .- "% Y U U
+FACTURA 136485 DAT(
+FECHA 25.06.2021 CLII
+PROVEEDOR GON
+Su PEDIDO C/CA
+NOPEDIDO — 994301
+VEHÍCULO — 4070KZR 2900
+
+f [FORMADE PAGO FECE
+
+= — [RES. SEMANAL VTO. 7 DIAS 08.07
+
+9 | CÓD | SUCÓD A
+
+
+--- Página 3, Imagen 1, rectangulo_2 ---
+BASE IMP. | %IVA CUOTA | %R.E. ] R.E. — |TOTAL
+10 de 12,74 10,00 1,27 1,40 0,18 % DES
+RD. BASE |
+" TOTAL
+haber recibido la siguiente mercancía perecedera y comprobado su estado. NO ADMITIMOS RECLAMACIONES.
+FIRMA: TOTAL
+. TARENTE TRIIMA T EECHA ICLIENTEl FACTURA |
+
+
+--- Página 3, Imagen 1, rectangulo_3 ---
+TOTAL LINEAS 12,74
+% DESCUENTO 0,00%
+BASE IMPONIB. 12,74
+TOTAL IVA 1,27
+TOTAL R.E. 0,18
+TOTAL FACTURA (EUR) — 14,19
+T — 1 O LMIBILM AIMNMINI MV IMTETMITI
+
+
