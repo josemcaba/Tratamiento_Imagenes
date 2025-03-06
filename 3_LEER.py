@@ -18,7 +18,7 @@ def load_rectangles_from_json(json_path, nif):
     return rectangles
 
 def mostrar_imagen(window_name, image):
-    ''' Mostrar la imagen recortada en una ventana '''
+    ''' Mostrar la imagen en una ventana '''
     cv2.imshow(window_name, image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
