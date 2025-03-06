@@ -3,16 +3,53 @@ import json
 import numpy as np
 import fitz  # PyMuPDF
 
+from screeninfo import get_monitors
+
+def get_screen_resolution():
+    width = 1440 - 15 # Resolución predeterminada si no se detecta el monitor
+    height = 900 - 15  # Resolución predeterminada si no se detecta el monitor
+    monitors = get_monitors()
+    if monitors:
+        for monitor in monitors:
+            width = monitor.width - 15 if monitor.width < width else width
+            height = monitor.height - 15 if monitor.height < height else height
+    return width, height
+
+def adjust_window_size(image, window_name="Imagen"):
+    # Obtener las dimensiones de la pantalla
+    screen_width, screen_height = get_screen_resolution()
+
+    # Obtener las dimensiones de la imagen
+    img_height, img_width = image.shape[:2]
+
+    # Calcular el factor de escala para que la imagen se ajuste a la pantalla
+    scale_width = screen_width / img_width
+    scale_height = screen_height / img_height
+    scale = min(scale_width, scale_height)
+
+    # Redimensionar la imagen si es necesario
+    if scale < 1:
+        new_width = int(img_width * scale)
+        new_height = int(img_height * scale)
+        resized_image = cv2.resize(image, (new_width, new_height), interpolation=cv2.INTER_AREA)
+    else:
+        resized_image = image
+
+    return resized_image
+
+
 # Función para cargar las coordenadas desde un archivo JSON
-def load_rectangles_from_json(json_path):
+def load_rectangles_from_json(json_path, nif):
     with open(json_path, "r") as f:
-        rectangles = json.load(f)
+        coordenadas = json.load(f)
+    rectangles = coordenadas[nif]
     return rectangles
 
 # Función para mostrar los trozos de imagen según las coordenadas del JSON
 def show_cropped_images(pdf_path, json_path):
+    nif = input("Introduzca NIF del emisor de la factura: ")
     # Cargar las coordenadas desde el archivo JSON
-    rectangles = load_rectangles_from_json(json_path)
+    rectangles = load_rectangles_from_json(json_path, nif)
 
     # Abrir el PDF
     doc = fitz.open(pdf_path)
@@ -45,7 +82,10 @@ def show_cropped_images(pdf_path, json_path):
 
                 # Mostrar la imagen recortada en una ventana
                 window_name = f"Pagina {page_num + 1}, {key}"
-                cv2.imshow(window_name, cropped_image)
+                resized_image = adjust_window_size(cropped_image, window_name)
+                    # Mostrar la imagen en una ventana
+                #cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+                cv2.imshow(window_name, resized_image)
                 cv2.waitKey(0)
                 cv2.destroyAllWindows()
 

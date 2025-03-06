@@ -11,9 +11,10 @@ import sys
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Función para cargar las coordenadas desde un archivo JSON
-def load_rectangles_from_json(json_path):
+def load_rectangles_from_json(json_path, nif):
     with open(json_path, "r") as f:
-        rectangles = json.load(f)
+        coordenadas = json.load(f)
+    rectangles = coordenadas[nif]
     return rectangles
 
 def mostrar_imagen(window_name, image):
@@ -47,15 +48,15 @@ def preprocess_image(image):
         raise ValueError("La imagen no tiene un formato válido (1 o 3 canales).")
 
     # Aplicar un desenfoque para reducir el ruido
-    # blurred = cv2.GaussianBlur(image, (5, 5), 0)
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
 
     # Aplicar umbralización (binarización)
-    # _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    _, binary = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     # Opcional: Ajustar el contraste y el brillo
     alpha = 1.5  # Control de contraste (1.0 es neutral)
     beta = 0     # Control de brillo (0 es neutral)
-    adjusted = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
+    adjusted = cv2.convertScaleAbs(binary, alpha=alpha, beta=beta)
 
     return adjusted
 
@@ -92,7 +93,8 @@ def has_enough_text(image, min_text_area=100):
 def extract_text_from_image(image):
     # Preprocesar la imagen
     processed_image = preprocess_image(image)
-    
+    processed_image = image
+
     # Ajustar la resolución
     # processed_image = adjust_resolution(processed_image)
     
@@ -112,8 +114,9 @@ def extract_text_from_image(image):
 
 # Función principal
 def extract_text_from_pdf_regions(pdf_path, json_path, output_txt_path):
+    nif = input("Introduzca NIF del emisor de la factura: ")
     # Cargar las coordenadas desde el archivo JSON
-    rectangles = load_rectangles_from_json(json_path)
+    rectangles = load_rectangles_from_json(json_path, nif)
 
     # Abrir el PDF
     doc = fitz.open(pdf_path)
@@ -168,4 +171,4 @@ if __name__ == "__main__":
     #     json_path = sys.argv[2]
     #     output_txt_path = sys.argv[3]
     #     extract_text_from_pdf_regions(pdf_path, json_path, output_txt_path)
-    extract_text_from_pdf_regions("faccsa_1-3.pdf", "rectangles.json", "texto.txt")
+    extract_text_from_pdf_regions("faccsa.pdf", "rectangles.json", "texto.txt")

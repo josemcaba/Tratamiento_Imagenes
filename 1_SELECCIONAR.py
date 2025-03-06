@@ -4,6 +4,7 @@ import numpy as np
 import json
 
 # Variables globales
+windowName = "Factura completa"
 drawing = False
 ix, iy = -1, -1
 fx, fy = -1, -1
@@ -23,7 +24,7 @@ def draw_rectangle(event, x, y, flags, param):
         if drawing:
             img_copy = img.copy()
             cv2.rectangle(img_copy, (ix, iy), (x, y), (0, 255, 0), 5)  # Grosor del borde aumentado
-            cv2.imshow("Imagen", img_copy)
+            cv2.imshow(windowName, img_copy)
 
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
@@ -31,7 +32,7 @@ def draw_rectangle(event, x, y, flags, param):
         fx=img.shape[1] if (fx > img.shape[1]) else fx
         fy=img.shape[0] if (fy > img.shape[0]) else fy
         cv2.rectangle(img, (ix, iy), (fx, fy), (255, 0, 255), 5)  # Grosor del borde aumentado
-        cv2.imshow("Imagen", img)
+        cv2.imshow(windowName, img)
         print(f"Rectángulo dibujado desde: ({ix}, {iy}) hasta ({fx}, {fy})")
 
         # Guardar las coordenadas del rectángulo en el diccionario con una clave única
@@ -56,14 +57,17 @@ def extract_image_from_pdf(pdf_path):
     return None
 
 # Función para guardar las coordenadas en un archivo JSON
-def save_rectangles_to_json(rectangles, json_path):
+def save_rectangles_to_json(nif, rectangles, json_path):
+    coords = {nif: rectangles}
     with open(json_path, "w") as f:
-        json.dump(rectangles, f, indent=4)
+        json.dump(coords, f, indent=4)
     print(f"Coordenadas guardadas en {json_path}")
 
 # Función principal
 def main(pdf_path):
     global img, rectangles
+
+    nif = input("Introduzca NIF del emisor de la factura: ")
 
     # Extraer la imagen del PDF
     img = extract_image_from_pdf(pdf_path)
@@ -72,17 +76,17 @@ def main(pdf_path):
         return
 
     # Mostrar la imagen en una ventana
-    cv2.namedWindow("Imagen", cv2.WINDOW_NORMAL)
-    cv2.setMouseCallback("Imagen", draw_rectangle)
+    cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
+    cv2.setMouseCallback(windowName, draw_rectangle)
 
     # Ajustar el tamaño de la ventana al máximo posible
-    cv2.imshow("Imagen", img)
+    cv2.imshow(windowName, img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
     # Guardar las coordenadas de los rectángulos en un archivo JSON
     json_path = "rectangles.json"
-    save_rectangles_to_json(rectangles, json_path)
+    save_rectangles_to_json(nif, rectangles, json_path)
 
 if __name__ == "__main__":
     # if len(sys.argv) != 2:

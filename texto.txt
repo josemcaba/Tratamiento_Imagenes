@@ -1,100 +1,394 @@
 --- Página 1, Imagen 1, rectangulo_1 ---
-FACTURA 132270 DAT
-FECHA 21.06.2021 CLI|
-PROVEEDOR GON
-SU PEDIDO CICA
-NoPEDIDO — 983879
-3 |VEHÍCULO — 8024-FZT 2906
-4 [RES.SEMANALVIO.7DIAS — — |28.0€
+FACTURA 132270 D
+
+FECHA 21.06.2021 C
+
+PROVEEDOR e
+
+SU PEDIDO C
+
+NOPEDIDO 983879
+
+VEHÍCULO - 8024-FZT 2
+FE
+26
+P
 
 
 --- Página 1, Imagen 1, rectangulo_2 ---
-BASEIMP. | %IVA | CUOTA |%RE.| RE — |TOTAL
-o de
-o de 29,17 10,00 2,92 1,40 0,41 % DESI
-RD BASE Il
-TOTAL
-culos
-TOTAL
-MUY IMPORTANTE: ninguna persona puede efectuar cobros sin la autorización correspondiente. Mediante factura de entrega reconozco
-haber recibido la siguiente mercancía perecedera y comprobado su estado. NO ADMITIMOS RECLAMACIONES.
-FIRMA: TOTAL.
+% IVA
+10,00
 
 
 --- Página 1, Imagen 1, rectangulo_3 ---
-TOTAL LINEAS 2917
+740
+
+
+--- Página 1, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 29,17
 % DESCUENTO 0,00%
 BASE IMPONIB. 29,17
 TOTAL IVA 2,92
 TOTAL R.E. 0,41
-TOTAL FACTURA (EUR) 32,50
+TOTAL FACTURA (EUR) — — 32,50
 
 
 --- Página 2, Imagen 1, rectangulo_1 ---
-FACTURA 135316 DAT(
-FECHA 24.06.2021 CLII
-PROVEEDOR GON
-SU PEDIDO CICr
-N* PEDIDO — 991419
-— |veHÍCULO — E-8473-BZH 2900
-+ [FORMADE PAGO FECI
-1 [RES. SEMANALVTO. 7 DÍAS 08.07
-9 | cón | SUCÓD A
+FACTURA 135316 D
+FECHA 24.06.2021 C
+PROVEEDOR G
+SU PEDIDO C
+NOPEDIDO 0991419
+
+VEHÍCULO ' E-8473-BZH 2
+FORMA DE PAGO FE
+RES. SEMANAL VTO. 7 DIAS 08
+l cÓóD | SUCÓD —
 
 
 --- Página 2, Imagen 1, rectangulo_2 ---
-- BASE IMP. | %IVA | CUOTA | %RE. ] RE — |TOTAL
-
-10 de 25,38 10,00 2,54 1,40 0,36 % DES
-(RD. BASE |
-' TOTAL
-a. TOTAL
-MAELTE Telhra T EECHA ÍCIIENTET FACTURA
+% IVA
+10,00
 
 
 --- Página 2, Imagen 1, rectangulo_3 ---
+140
+
+
+--- Página 2, Imagen 1, rectangulo_4 ---
 TOTAL LINEAS 25,38
 % DESCUENTO 0,00%
 BASE IMPONIB. 25,38
 TOTAL IVA 2,54
 TOTAL R.E. 0,36
-TOTAL FACTURA (EUR) 28,28
-—————;————K—K—KKK—z—Ñ———;—_—] NNO ENN A PAN ANR
 
 
 --- Página 3, Imagen 1, rectangulo_1 ---
-— 8 .- "% Y U U
-FACTURA 136485 DAT(
-FECHA 25.06.2021 CLII
-PROVEEDOR GON
-Su PEDIDO C/CA
-NOPEDIDO — 994301
-VEHÍCULO — 4070KZR 2900
+FACTURA 136485 D
+FECHA 25.06.2021 C
+PROVEEDOR e
+SU PEDIDO C
+N*PEDIDO 994301
 
-f [FORMADE PAGO FECE
-
-= — [RES. SEMANAL VTO. 7 DIAS 08.07
-
-9 | CÓD | SUCÓD A
+VEHÍCULO  4070KZR 2'
+FORMA DE PAGO FE
+RES. SEMANAL VTO. 7 DIAS 0€
+l cÓD | SUCÓD '
 
 
 --- Página 3, Imagen 1, rectangulo_2 ---
-BASE IMP. | %IVA CUOTA | %R.E. ] R.E. — |TOTAL
-10 de 12,74 10,00 1,27 1,40 0,18 % DES
-RD. BASE |
-" TOTAL
-haber recibido la siguiente mercancía perecedera y comprobado su estado. NO ADMITIMOS RECLAMACIONES.
-FIRMA: TOTAL
-. TARENTE TRIIMA T EECHA ICLIENTEl FACTURA |
+| % IVA |
+10,00
 
 
 --- Página 3, Imagen 1, rectangulo_3 ---
+1,40
+
+
+--- Página 3, Imagen 1, rectangulo_4 ---
 TOTAL LINEAS 12,74
 % DESCUENTO 0,00%
 BASE IMPONIB. 12,74
 TOTAL IVA 1,27
 TOTAL R.E. 0,18
 TOTAL FACTURA (EUR) — 14,19
-T — 1 O LMIBILM AIMNMINI MV IMTETMITI
+
+
+--- Página 4, Imagen 1, rectangulo_1 ---
+FACTURA 137145 D
+FECHA 26.06.2021 C
+PROVEEDOR G
+SU PEDIDO O
+NOPEDIDO 996000
+
+VEHÍCULO  5209-LGR 2c
+FORMA DE PAGO FE
+RES. SEMANAL VTO. 7 DIAS 08
+| cóD | SUCÓD —
+
+
+--- Página 4, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 4, Imagen 1, rectangulo_3 ---
+1,40
+
+
+--- Página 4, Imagen 1, rectangulo_4 ---
+TOTAL LÍNEAS 20,12
+% DESCUENTO 0,00%
+BASE IMPONIB. 20,12
+TOTAL IVA 2,01
+TOTAL R.E. 0,28
+TOTAL FACTURA(EUR) — 22,4
+
+
+--- Página 5, Imagen 1, rectangulo_1 ---
+FACTURA 137949 E
+FECHA 28.06.2021 C
+
+PROVEEDOR C
+SU PEDIDO C
+NOPEDIDO '997391
+
+VEHÍCULO » 8024-FZT 2
+FORMA DE PAGO FI
+RES. SEMANAL VTO. 7 DIAS 0£
+| cón | suCÓD
+
+
+--- Página 5, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 5, Imagen 1, rectangulo_3 ---
+140
+
+
+--- Página 5, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 21,47
+% DESCUENTO 0,00%
+BASE IMPONIB. 21,47
+TOTAL IVA 215
+TOTAL R.E. 0,30
+TOTAL FACTURA (EUR) — 23,972
+
+
+--- Página 6, Imagen 1, rectangulo_1 ---
+FACTURA 138991 D
+
+FECHA 29.06.2021 C
+
+PROVEEDOR G
+
+SU PEDIDO C
+
+N* PEDIDO 500296
+
+VEHÍCULO - E-8473-BZH 2
+FE
+08
+f ea
+
+
+--- Página 6, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 6, Imagen 1, rectangulo_3 ---
+1,40
+
+
+--- Página 6, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 24,38
+% DESCUENTO 0,00%
+BASE IMPONIB. 24,38
+TOTAL IVA 2,44
+TOTAL R.E. 0,34
+TOTAL FACTURA (EUR) — 27,16
+
+
+--- Página 7, Imagen 1, rectangulo_1 ---
+FACTURA 142145 D
+
+FECHA 02.07.2021 C
+
+PROVEEDOR G
+
+SU PEDIDO C
+
+N* PEDIDO 508091
+
+VEHÍCULO — 4070KZR 2
+FE
+14
+
+
+--- Página 7, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 7, Imagen 1, rectangulo_3 ---
+140
+
+
+--- Página 7, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 23,32
+% DESCUENTO 0,00%
+BASE IMPONIB. 23,32
+TOTAL IVA 2,33
+TOTAL R.E. 0,33
+
+
+--- Página 8, Imagen 1, rectangulo_1 ---
+FACTURA 142920 L
+
+FECHA 03.07.2021 C
+
+PROVEEDOR C
+
+SU PEDIDO C
+
+N* PEDIDO 509596
+
+VEHÍCULO — 5994-KGN 2
+a
+14
+
+
+--- Página 8, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 8, Imagen 1, rectangulo_3 ---
+140
+
+
+--- Página 8, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 2213
+% DESCUENTO 0,00%
+BASE IMPONIB. 2213
+TOTAL IVA 221
+TOTAL R.E. 0,31
+TOTALFACTURA(EUR) “ 24,65
+
+
+--- Página 9, Imagen 1, rectangulo_1 ---
+FACTURA 144686 DA
+FECHA 06.07.2021 Cl
+PROVEEDOR GC
+SU PEDIDO C/
+N*CPEDIDO 514030
+
+VEHÍCULO — 4070KZR 29
+FORMA DE PAGO FE
+RES. SEMANAL VTO. 7 DIAS 14.
+| cóD | SUCÓD I o
+
+
+--- Página 9, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 9, Imagen 1, rectangulo_3 ---
+1,40
+
+
+--- Página 9, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 23,85
+% DESCUENTO 0,00%
+BASE IMPONIB. 23,85
+TOTAL IVA 2,39
+TOTAL R.E. 0,33
+
+
+--- Página 10, Imagen 1, rectangulo_1 ---
+FACTURA 146075 »
+
+FECHA 07.07.2021 C
+
+PROVEEDOR C
+
+SU PEDIDO C
+
+NOPEDIDO 516519
+
+VEHÍCULO — 5994-KGN 2
+FORMA DE PAGO F
+RES. SEMANAL VTO. 7 DIAS 21
+SU CÓD
+
+
+--- Página 10, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 10, Imagen 1, rectangulo_3 ---
+l % R.E. i
+1,40
+
+
+--- Página 10, Imagen 1, rectangulo_4 ---
+—7
+TOTAL LINEAS 87,91
+% DESCUENTO 0,00%
+BASE IMPONIB. 87,91
+TOTAL IVA 8,79
+TOTAL R.E. 1,23
+TOTAL FACTURA (EUR) - 97,93
+
+
+--- Página 11, Imagen 1, rectangulo_1 ---
+FACTURA 146932 L
+
+FECHA 08.07.2021 C
+
+PROVEEDOR €
+
+SU PEDIDO e
+
+NoPEDIDO — 518926
+
+VEHÍCULO — MA5532CW 2
+Fl
+2
+P
+
+
+--- Página 11, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 11, Imagen 1, rectangulo_3 ---
+140
+
+
+--- Página 11, Imagen 1, rectangulo_4 ---
+TOTAL LÍNEAS 43,82
+% DESCUENTO 0,00%
+BASE IMPONIB. 43,82
+TOTAL IVA 4.38
+TOTAL R.E. 0,61
+TOTAL FACTURA (EUR) 48,81
+
+
+--- Página 12, Imagen 1, rectangulo_1 ---
+FACTURA 148070 »
+FECHA 09.07.2021 C
+
+PROVEEDOR Ú
+SU PEDIDO C
+NC PEDIDO 521430
+
+VEHÍCULO  5994-KGN 2
+FORMA DE PAGO FI
+RES. SEMANAL VTO. 7 DIAS 21
+|cóo SU CÓD
+
+
+--- Página 12, Imagen 1, rectangulo_2 ---
+% IVA
+10,00
+
+
+--- Página 12, Imagen 1, rectangulo_3 ---
+1,40
+
+
+--- Página 12, Imagen 1, rectangulo_4 ---
+TOTAL LINEAS 39,06
+% DESCUENTO 0,00%
+BASE IMPONIB. 39,06
+TOTAL IVA 3,91
+TOTAL R.E. 0,55
 
 
